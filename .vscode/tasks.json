@@ -4,6 +4,11 @@
     "version": "0.1.0",
     "command": "lime",
     "isShellCommand": true,
-    "args": ["test", "windows"],
+    "osx": {
+         "args": ["test", "mac"]
+    },
+    "windows": {
+         "args": ["test", "windows"]
+    },
     "showOutput": "always"
 }

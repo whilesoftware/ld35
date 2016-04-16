@@ -31,6 +31,9 @@ class GameState extends FlxState {
 	var fishingline:FlxGroup;
 	var fish:FlxGroup;
 	
+	var boat1:BoatData;
+	var boat2:BoatData;
+	
 	
 	override public function create():Void {
 		frame = -1;
@@ -53,7 +56,7 @@ class GameState extends FlxState {
 			water.add(cwater);
 		}
 		
-		// boats
+		// boat fronts
 		boat_fronts = new FlxGroup();
 		var boat_one = new Boat(1, true);
 		var boat_two = new Boat(2, true);
@@ -65,12 +68,24 @@ class GameState extends FlxState {
 		characters = new FlxGroup();
 		add(characters);
 		
+		// boat rears
 		boat_rears = new FlxGroup();
 		boat_one = new Boat(1, false);
 		boat_two = new Boat(2, false);
 		boat_rears.add(boat_one);
 		boat_rears.add(boat_two);
 		add(boat_rears);
+		
+		// boat data
+		boat1 = new BoatData();
+		boat1.x = 64;
+		boat1.y = FlxG.height - 70;
+		boat1.target_time = 0;
+		
+		boat2 = new BoatData();
+		boat2.x = FlxG.width - 128 - 64;
+		boat2.y = FlxG.height - 70;
+		boat2.target_time = 0;
 		
 		// arrows
 		arrows = new FlxGroup();

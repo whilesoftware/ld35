@@ -25,9 +25,10 @@ class Boat extends FlxSprite {
 
         loadGraphic("assets/images/boat.png", true, 128, 64, true);
         if (is_front) {
-            animation.add("a", [0, 1, 2, 3, 4, 5], 3, true, flipx, false);
-        }else{
             animation.add("a", [6, 7, 8, 9, 10, 11], 3, true, flipx, false);
+        }else{
+            
+            animation.add("a", [0, 1, 2, 3, 4, 5], 3, true, flipx, false);
         }
         
         

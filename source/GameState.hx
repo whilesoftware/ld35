@@ -23,7 +23,8 @@ class GameState extends FlxState {
 	
 	var clouds:FlxGroup;
 	var water:FlxGroup;
-	var boats:FlxGroup;
+	var boat_fronts:FlxGroup;
+	var boat_rears:FlxGroup;
 	var characters:FlxGroup;
 	var arrows:FlxGroup;
 	var birds:FlxGroup;
@@ -53,16 +54,23 @@ class GameState extends FlxState {
 		}
 		
 		// boats
-		boats = new FlxGroup();
-		var boat_one = new Boat(1);
-		var boat_two = new Boat(2);
-		boats.add(boat_one);
-		boats.add(boat_two);
-		add(boats);
+		boat_fronts = new FlxGroup();
+		var boat_one = new Boat(1, true);
+		var boat_two = new Boat(2, true);
+		boat_fronts.add(boat_one);
+		boat_fronts.add(boat_two);
+		add(boat_fronts);
 		
 		// characters
 		characters = new FlxGroup();
 		add(characters);
+		
+		boat_rears = new FlxGroup();
+		boat_one = new Boat(1, false);
+		boat_two = new Boat(2, false);
+		boat_rears.add(boat_one);
+		boat_rears.add(boat_two);
+		add(boat_rears);
 		
 		// arrows
 		arrows = new FlxGroup();

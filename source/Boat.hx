@@ -10,10 +10,13 @@ class Boat extends FlxSprite {
     
     var boat_id:Int = 0;
     
-    public function new(bid:Int) {
+    var is_front:Bool = true;
+    
+    public function new(bid:Int, _is_front:Bool) {
         super();
         
         boat_id = bid;
+        is_front = _is_front;
         
         var flipx:Bool = false;
         if (boat_id == 1) {
@@ -21,7 +24,12 @@ class Boat extends FlxSprite {
         }
 
         loadGraphic("assets/images/boat.png", true, 128, 64, true);
-        animation.add("a", [0, 1, 2, 3, 4, 5], 3, true, flipx, false);
+        if (is_front) {
+            animation.add("a", [0, 1, 2, 3, 4, 5], 3, true, flipx, false);
+        }else{
+            animation.add("a", [6, 7, 8, 9, 10, 11], 3, true, flipx, false);
+        }
+        
         
         if (boat_id == 1) {
             x = 64;
@@ -32,7 +40,12 @@ class Boat extends FlxSprite {
         x += FlxG.random.int(-5, 5);
         y = FlxG.random.int(FlxG.height - 80, FlxG.height - 70);
         
-        animation.play("a", false, false, -1);
+        if (boat_id == 1) {
+            animation.play("a", false, false, 1);
+        }else{
+            animation.play("a", false, false, 4);
+        }
+        
     }
     
     public override function update(elapsed:Float) {

@@ -21,6 +21,13 @@ class BoatData {
 	public var target_time:Int = 0;
 	
 	public var easing:EaseFunction;
+    
+    public var front:Boat;
+    public var rear:Boat;
+    
+    public function new() {
+        
+    }
 	
 	public function make_current_the_start() {
 		start_x = x;
@@ -44,12 +51,21 @@ class BoatData {
 	
 	
 	public function set_time(time:Int) {
-		var fraction:Float = (time - start_time) / (target_time - start_time);
+        var numerator:Float = time - start_time;
+        var denominator:Float = target_time - start_time;
+        var fraction:Float = 1;
+        if (target_time != start_time) {
+            fraction = numerator / denominator;
+        }
+        
+        fraction = Math.max(0, Math.min(fraction,1));
+        
         if (easing != null) {
             fraction = easing(fraction);
         }
-		x = start_x + (target_x - start_x) * fraction;
-		y = start_y + (target_y - start_y) * fraction;
+        
+		x = Std.int(start_x + (target_x - start_x) * fraction);
+		y = Std.int(start_y + (target_y - start_y) * fraction);
 		angle = start_angle + (target_angle - start_angle) * fraction;
 	}
 }

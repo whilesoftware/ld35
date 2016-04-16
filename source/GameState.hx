@@ -17,7 +17,6 @@ import flixel.tweens.FlxEase;
  * @author while(software)
  */
 class GameState extends FlxState {
-	public var frame:Int;
 	
 	public var state:Int = -1;
 	
@@ -36,7 +35,6 @@ class GameState extends FlxState {
 	
 	
 	override public function create():Void {
-		frame = -1;
 		
 		Reg.gamestate = this;
 		
@@ -56,13 +54,25 @@ class GameState extends FlxState {
 			water.add(cwater);
 		}
 		
+		// boat data
+		boat1 = new BoatData();
+		boat1.set_start_value(64, FlxG.height - 70, 0, 0);
+		boat1.set_target_value(64, FlxG.height - 70, 0, 1);
+		
+		boat2 = new BoatData();
+		boat2.set_start_value(FlxG.width - 128 - 64, FlxG.height - 70, 0, 0);
+		boat2.set_target_value(FlxG.width - 128 - 64, FlxG.height - 70, 0, 1);
+		
 		// boat fronts
 		boat_fronts = new FlxGroup();
 		var boat_one = new Boat(1, true);
 		var boat_two = new Boat(2, true);
 		boat_fronts.add(boat_one);
 		boat_fronts.add(boat_two);
+		boat1.front = boat_one;
+		boat2.front = boat_two;
 		add(boat_fronts);
+		
 		
 		// characters
 		characters = new FlxGroup();
@@ -74,18 +84,11 @@ class GameState extends FlxState {
 		boat_two = new Boat(2, false);
 		boat_rears.add(boat_one);
 		boat_rears.add(boat_two);
+		boat1.rear = boat_one;
+		boat2.rear = boat_two;
 		add(boat_rears);
 		
-		// boat data
-		boat1 = new BoatData();
-		boat1.x = 64;
-		boat1.y = FlxG.height - 70;
-		boat1.target_time = 0;
 		
-		boat2 = new BoatData();
-		boat2.x = FlxG.width - 128 - 64;
-		boat2.y = FlxG.height - 70;
-		boat2.target_time = 0;
 		
 		// arrows
 		arrows = new FlxGroup();
@@ -116,23 +119,31 @@ class GameState extends FlxState {
 		
 		FlxG.camera.bgColor = 0xff212121;
 		
+		Reg.update(elapsed);
+		
 		switch(state) {
 			case 0:
 				// we're waiting for the game to start
 
 			case 1:
-				// the game is running, update the frame count
-				frame++;
+				// the game is running
 				
 			case 2:
 				// the game just ended
 		}
 		
+		boat1.set_time(Reg.frame_number);
+		boat2.set_time(Reg.frame_number);
+		
+		boat1.front.set(boat1);
+		boat1.rear.set(boat1);
+		boat2.front.set(boat2);
+		boat2.rear.set(boat2);
 		
 		
 		super.update(elapsed);
 		
-		Reg.update(elapsed);
+		
 
 	}
 }

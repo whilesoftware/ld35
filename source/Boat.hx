@@ -32,14 +32,7 @@ class Boat extends FlxSprite {
         }
         
         
-        if (boat_id == 1) {
-            x = 64;
-        }else{
-            x = FlxG.width - 128 - 64;
-        }
         
-        x += FlxG.random.int(-5, 5);
-        y = FlxG.random.int(FlxG.height - 80, FlxG.height - 70);
         
         if (boat_id == 1) {
             animation.play("a", false, false, 1);
@@ -47,6 +40,12 @@ class Boat extends FlxSprite {
             animation.play("a", false, false, 4);
         }
         
+    }
+    
+    public function set(data:BoatData) {
+        x = data.x;
+        y = data.y;
+        angle = data.angle;
     }
     
     public override function update(elapsed:Float) {

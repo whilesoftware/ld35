@@ -1,0 +1,134 @@
+﻿{"frames": [
+
+{
+   "filename": "Layer 1",
+   "frame": {"x":0, "y":0,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 2",
+   "frame": {"x":128, "y":0,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 3",
+   "frame": {"x":256, "y":0,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 4",
+   "frame": {"x":384, "y":0,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 5",
+   "frame": {"x":0, "y":64,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 6",
+   "frame": {"x":128, "y":64,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 7",
+   "frame": {"x":256, "y":64,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 8",
+   "frame": {"x":384, "y":64,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 9",
+   "frame": {"x":0, "y":128,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 10",
+   "frame": {"x":128, "y":128,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 11",
+   "frame": {"x":256, "y":128,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 12",
+   "frame": {"x":384, "y":128,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 13",
+   "frame": {"x":0, "y":192,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 14",
+   "frame": {"x":128, "y":192,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 15",
+   "frame": {"x":256, "y":192,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+],
+"meta": {
+   "app": "Adobe Flash Professional",
+   "version": "14.0",
+   "Target": "Edge Animate",
+   "Target Version": "4.0",
+   "image": "clouds.png",
+   "format": "RGBA8888",
+   "size": {"w":512 ,"h":256 },
+   "scale": "1"
+}
+}

@@ -1,0 +1,62 @@
+﻿{"frames": [
+
+{
+   "filename": "Layer 1",
+   "frame": {"x":0, "y":0,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 2",
+   "frame": {"x":128, "y":0,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 3",
+   "frame": {"x":256, "y":0,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 4",
+   "frame": {"x":0, "y":64,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 5",
+   "frame": {"x":128, "y":64,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 6",
+   "frame": {"x":256, "y":64,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+],
+"meta": {
+   "app": "Adobe Flash Professional",
+   "version": "14.0",
+   "Target": "Edge Animate",
+   "Target Version": "4.0",
+   "image": "boat.png",
+   "format": "RGBA8888",
+   "size": {"w":384 ,"h":128 },
+   "scale": "1"
+}
+}

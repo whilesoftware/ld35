@@ -1,0 +1,246 @@
+﻿{"frames": [
+
+{
+   "filename": "fishing sitting 1",
+   "frame": {"x":0, "y":0,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "fishing sitting 2",
+   "frame": {"x":128, "y":0,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "fishing sitting 3",
+   "frame": {"x":256, "y":0,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "fishing sitting 4",
+   "frame": {"x":384, "y":0,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "fishing standing 1",
+   "frame": {"x":512, "y":0,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "fishing standing 2",
+   "frame": {"x":640, "y":0,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "fishing standing 3",
+   "frame": {"x":0, "y":64,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "fishing standing 4",
+   "frame": {"x":128, "y":64,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "ROWING OARS FORWARD",
+   "frame": {"x":256, "y":64,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "ROWING OARD MID FORWARD",
+   "frame": {"x":384, "y":64,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "ROWING OARS MID BACK",
+   "frame": {"x":512, "y":64,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "ROWING OARS BACKWARD",
+   "frame": {"x":640, "y":64,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "rowing oards up forward",
+   "frame": {"x":0, "y":128,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "rowing oars up mid forward",
+   "frame": {"x":128, "y":128,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "rowing oars up mid back",
+   "frame": {"x":256, "y":128,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "rowing oars up back",
+   "frame": {"x":384, "y":128,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "oar front down",
+   "frame": {"x":512, "y":128,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "oar mid front down",
+   "frame": {"x":640, "y":128,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "oar mid back down",
+   "frame": {"x":0, "y":192,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "oar back down",
+   "frame": {"x":128, "y":192,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "oar front up",
+   "frame": {"x":256, "y":192,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "oar mid front up",
+   "frame": {"x":384, "y":192,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "oar mid back up",
+   "frame": {"x":512, "y":192,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "oar back up",
+   "frame": {"x":640, "y":192,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "arms",
+   "frame": {"x":0, "y":256,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "pole",
+   "frame": {"x":128, "y":256,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 14",
+   "frame": {"x":256, "y":256,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 6",
+   "frame": {"x":384, "y":256,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+,{
+   "filename": "Layer 12",
+   "frame": {"x":512, "y":256,"w":128 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":128 , "h":64 },
+   "sourceSize": {"w":128 ,"h":64 }
+}
+],
+"meta": {
+   "app": "Adobe Flash Professional",
+   "version": "14.0",
+   "Target": "Edge Animate",
+   "Target Version": "4.0",
+   "image": "mock-char.png",
+   "format": "RGBA8888",
+   "size": {"w":768 ,"h":320 },
+   "scale": "1"
+}
+}

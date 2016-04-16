@@ -22,7 +22,7 @@ class Water extends FlxSprite {
     
     private function randomize(outside:Bool) {
         y = FlxG.random.int(0, Std.int(FlxG.height / 3));
-        y = FlxG.height - 64 + FlxG.random.int(-10, 25);
+        y = FlxG.height - 64 + FlxG.random.int(-20, 30);
         
         if (outside) {
             x = FlxG.random.int(-700, -650);
@@ -36,7 +36,7 @@ class Water extends FlxSprite {
             animation.play("b", false, false, FlxG.random.int(0, 4));
         }
         
-        velocity.set( FlxG.random.float(5, 25), 0);
+        velocity.set( FlxG.random.float(25, 55), 0);
     }
     
     public override function update(elapsed:Float) {

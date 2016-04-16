@@ -11,6 +11,12 @@ class BoatData {
 	public var y:Int = 0;
 	public var angle:Float = 0;
 	
+	public var last_time:Int = 0;
+	
+	public var basex:Int = 0;
+	public var basey:Int = 0;
+	public var baseangle:Float = 0;
+	
 	public var start_x:Int = 0;
 	public var target_x:Int = 0;
 	public var start_y:Int = 0;
@@ -30,9 +36,10 @@ class BoatData {
     }
 	
 	public function make_current_the_start() {
-		start_x = x;
-		start_y = y;
-		start_angle = angle;
+		start_x = x - basex;
+		start_y = y - basey;
+		start_angle = angle - baseangle;
+		start_time = last_time;
 	}
 	
 	public function set_start_value(_x:Int, _y:Int, _angle:Float, _time:Int) {
@@ -64,8 +71,10 @@ class BoatData {
             fraction = easing(fraction);
         }
         
-		x = Std.int(start_x + (target_x - start_x) * fraction);
-		y = Std.int(start_y + (target_y - start_y) * fraction);
-		angle = start_angle + (target_angle - start_angle) * fraction;
+		x = basex + Std.int(start_x + (target_x - start_x) * fraction);
+		y = basey + Std.int(start_y + (target_y - start_y) * fraction);
+		angle = baseangle + start_angle + (target_angle - start_angle) * fraction;
+		
+		last_time = time;
 	}
 }

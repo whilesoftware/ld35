@@ -44,7 +44,7 @@ class FishingLine {
     
     private static var nape_started:Bool = false;
     
-    var is_active:Bool = false;
+    public var is_active:Bool = false;
     var is_cranking:Bool = false;
     
     var polejoint:DistanceJoint = null;
@@ -219,6 +219,12 @@ class FishingLine {
         destroy_timer = new FlxTimer();
         destroy_timer.start(1.5).onComplete = function(t:FlxTimer):Void {
             destroy_line();
+        }
+    }
+    
+    public function move_hook(force:Vec2) {
+        if (is_active) {
+            hook.body.applyImpulse(force);
         }
     }
     

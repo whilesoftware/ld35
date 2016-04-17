@@ -8,29 +8,31 @@ import flixel.tweens.FlxEase;
 
 class Oar extends FlxSprite {
     
-    var boat_id:Int = 0;
+    var reversed:Bool = false;
     
+    public function set_reversed(newval:Bool) {
+        reversed = newval;
+    }
     
-    public function new(bid:Int) {
+    public function new() {
         super();
-        
-        boat_id = bid;
-        
-        var flipx:Bool = false;
-        if (boat_id == 1) {
-            flipx = true;
-        }
         
         antialiasing = true;
 
         loadGraphic("assets/images/mock-char.png", true, 128, 64, true);
                 
-        animation.add("rowing", [22, 23, 19, 18, 17, 16, 20, 21], 5, true, flipx, false);
+        animation.add("rowing", [22, 23, 19, 18, 17, 16, 20, 21], 5, true, false, false);
+        animation.add("r_rowing", [22, 23, 19, 18, 17, 16, 20, 21], 5, true, true, false);
     }
     
     public function start_rowing() {
         visible = true;
-        animation.play("rowing", true, false, 0);
+        if (reversed) {
+            animation.play("r_rowing", true, false, 0);
+        }else{
+            animation.play("rowing", true, false, 0);
+        }
+        
     }
     
     public function stop_rowing() {

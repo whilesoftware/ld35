@@ -10,7 +10,6 @@ class Reg
 {
 	
 	public static var boat1:BoatData = new BoatData();
-	public static var boat2:BoatData = new BoatData();
 	
 	public static var frame_number:Int = 0;
 	public static var frame_delta:Float = 1 / 30;

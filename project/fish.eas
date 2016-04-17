@@ -1,0 +1,78 @@
+﻿{"frames": [
+
+{
+   "filename": "Layer 4",
+   "frame": {"x":0, "y":0,"w":64 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":64 , "h":64 },
+   "sourceSize": {"w":64 ,"h":64 }
+}
+,{
+   "filename": "Layer 6",
+   "frame": {"x":64, "y":0,"w":64 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":64 , "h":64 },
+   "sourceSize": {"w":64 ,"h":64 }
+}
+,{
+   "filename": "Layer 9",
+   "frame": {"x":128, "y":0,"w":64 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":64 , "h":64 },
+   "sourceSize": {"w":64 ,"h":64 }
+}
+,{
+   "filename": "Layer 7",
+   "frame": {"x":0, "y":64,"w":64 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":64 , "h":64 },
+   "sourceSize": {"w":64 ,"h":64 }
+}
+,{
+   "filename": "Layer 5",
+   "frame": {"x":64, "y":64,"w":64 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":64 , "h":64 },
+   "sourceSize": {"w":64 ,"h":64 }
+}
+,{
+   "filename": "Layer 10",
+   "frame": {"x":128, "y":64,"w":64 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":64 , "h":64 },
+   "sourceSize": {"w":64 ,"h":64 }
+}
+,{
+   "filename": "Layer 11",
+   "frame": {"x":0, "y":128,"w":64 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":64 , "h":64 },
+   "sourceSize": {"w":64 ,"h":64 }
+}
+,{
+   "filename": "Layer 12",
+   "frame": {"x":64, "y":128,"w":64 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":64 , "h":64 },
+   "sourceSize": {"w":64 ,"h":64 }
+}
+],
+"meta": {
+   "app": "Adobe Flash Professional",
+   "version": "14.0",
+   "Target": "Edge Animate",
+   "Target Version": "4.0",
+   "image": "fish.png",
+   "format": "RGBA8888",
+   "size": {"w":192 ,"h":192 },
+   "scale": "1"
+}
+}

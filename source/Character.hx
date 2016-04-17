@@ -8,73 +8,84 @@ import flixel.tweens.FlxEase;
 
 import flixel.util.FlxTimer;
 
+import nape.geom.Vec2;
+
 class Character extends FlxSprite {
     
-    var boat_id:Int = 0;
-    
     public var is_fishing:Bool = false;
+    
+    var reversed:Bool = false;
+    var prefix:String = "";
+    
+    public function set_reversed(newval:Bool) {
+        reversed = newval;
+        if (reversed) {
+            prefix="r_";
+        }else{
+            prefix = "";
+        }
+    }
+    
+    public function load_animations(flipx:Bool, _prefix:String) {
+        animation.add(_prefix + "fish_sit", [0, 1, 2, 3], 3, true, flipx, false);
+        animation.add(_prefix + "fish_stand", [4, 5, 6, 7], 3, true, flipx, false);
+        animation.add(_prefix + "rowing", [14, 15, 11, 10, 9, 8, 12, 13], 5, true, flipx, false);
+        animation.add(_prefix + "fish_precast_standing", [24], 1, true, flipx, false);
+        animation.add(_prefix + "fish_cast_standing", [25, 26], 10, false, flipx, false);
+        animation.add(_prefix + "fish_crank_standing", [27, 28, 29], 10, true, flipx, false);
+    }
     
     public function new(bid:Int) {
         super();
         
-        boat_id = bid;
-        
-        var flipx:Bool = false;
-        if (boat_id == 1) {
-            flipx = true;
-        }
+        loadGraphic("assets/images/mock-char.png", true, 128, 64, true);
+        load_animations(false, "");
+        load_animations(true, "r_");
         
         antialiasing = true;
-
-        loadGraphic("assets/images/mock-char.png", true, 128, 64, true);
         
-        animation.add("fish_sit", [0, 1, 2, 3], 3, true, flipx, false);
-        animation.add("fish_stand", [4, 5, 6, 7], 3, true, flipx, false);
-        
-        animation.add("rowing", [14, 15, 11, 10, 9, 8, 12, 13], 5, true, flipx, false);
-        
-        animation.add("fish_precast_standing", [24], 1, true, flipx, false);
-        animation.add("fish_cast_standing", [25, 26], 10, false, flipx, false);
-        animation.add("fish_crank_standing", [27, 28, 29], 10, true, flipx, false);
-        
-        animation.play("fish_sit", false, false, -1);
+        stop_rowing();
     }
     
     public function start_rowing() {
-        animation.play("rowing", true, false, 0);
+        animation.play(prefix + "rowing", true, false, 0);
     }
     
     public function stop_rowing() {
-        animation.play("fish_sit", true, false, 0);
+        animation.play(prefix + "fish_sit", true, false, 0);
     }
     
     public function start_casting() {
         is_fishing = false;
-        animation.play("fish_precast_standing", true, false, 0);
+        animation.play(prefix + "fish_precast_standing", true, false, 0);
         
         Reg.gamestate.player_line.precast();
         
         new FlxTimer().start(0.2).onComplete = function(t:FlxTimer):Void
         {
             Reg.gamestate.player_line.cast_new_line(250, -150);
-            animation.play("fish_cast_standing", true, false, 0);
+            animation.play(prefix + "fish_cast_standing", true, false, 0);
             
             new FlxTimer().start(1).onComplete = function(t:FlxTimer):Void {
                 is_fishing = true;
-                animation.play("fish_stand", true, false, 0);
+                animation.play(prefix + "fish_stand", true, false, 0);
             }
         }
     }
     
     public function start_cranking() {
-        animation.play("fish_crank_standing", true, false, 0);
+        animation.play(prefix + "fish_crank_standing", true, false, 0);
         
         new FlxTimer().start(0.2).onComplete = function(t:FlxTimer):Void
         {
             Reg.gamestate.player_line.crank_on_line();
-            animation.play("fish_stand", true, false, 0);
+            animation.play(prefix + "fish_stand", true, false, 0);
             is_fishing = false;
         }
+    }
+    
+    public function move_hook(force:Vec2) {
+        Reg.gamestate.player_line.move_hook(force);
     }
     
     public function set(data:BoatData) {

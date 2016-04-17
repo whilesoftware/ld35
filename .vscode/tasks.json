@@ -8,7 +8,7 @@
          "args": ["test", "mac"]
     },
     "windows": {
-         "args": ["test", "windows"]
+         "args": ["test", "flash"]
     },
     "showOutput": "always"
 }

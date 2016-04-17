@@ -14,7 +14,7 @@ class Fish extends FlxSprite {
     
     var swing_state:String = "a";
     
-    var state:Int = 0;
+    public var state:Int = 0;
     // 0 = swimming
     // 1 = hooked
     
@@ -37,7 +37,7 @@ class Fish extends FlxSprite {
         
         state = 0;
         
-        y = FlxG.random.int(420, 640);
+        y = FlxG.random.int(FlxG.height + 40, FlxG.height + 200);
         
         if (FlxG.random.float() < 0.5) {
             // moving right to left
@@ -52,11 +52,18 @@ class Fish extends FlxSprite {
         
         swing_rate = FlxG.random.int(10,30);
         swing_time = 0;
+        
+        velocity.y = 0;
     }
     
     public function hook_fish() {
         // switch to the hooked state
         // fly up in the air
+        state = 1;
+        
+        velocity.y = -1000;
+        
+        
     }
     
     public override function update(elapsed:Float) {
@@ -92,6 +99,10 @@ class Fish extends FlxSprite {
             
         }else{
             // if we get above a y = 300, turn into a bird and randomize
+            if (y < 300) {
+                //Reg.gamestate.create_bird(x,y,velocity.x);
+                randomize();
+            }
         }
     }
 }

@@ -33,11 +33,11 @@ class FishingLine {
     
     var fishing_pole:Body;
     
-    static var MAX_LENGTH = 200;
+    static var MAX_LENGTH = 250;
     static var NUM_SEGMENTS = 20;
     
     var lineSprite:FlxSprite;
-    var hook:FlxNapeSprite;
+    public var hook:FlxNapeSprite;
     var pole:FlxNapeSprite;
     
     var destroy_timer:FlxTimer;
@@ -45,7 +45,7 @@ class FishingLine {
     private static var nape_started:Bool = false;
     
     public var is_active:Bool = false;
-    var is_cranking:Bool = false;
+    public var is_cranking:Bool = false;
     
     var polejoint:DistanceJoint = null;
     
@@ -64,7 +64,7 @@ class FishingLine {
             FlxNapeSpace.init();
         
             FlxNapeSpace.space.gravity.setxy(0, 500);
-            FlxNapeSpace.createWalls(-10, 100, 660, 1000);
+            FlxNapeSpace.createWalls(-100, -100, FlxG.width + 100, FlxG.height * 3);
             //FlxNapeSpace.createWalls(0, 0, FlxG.width, FlxG.height);
             
             nape_started = true;
@@ -95,7 +95,7 @@ class FishingLine {
         cosmetic_hook.visible = false;
         */
         
-        Reg.gamestate.fishingline.add(cosmetic_hook);
+        //Reg.gamestate.fishingline.add(cosmetic_hook);
         
         Reg.gamestate.fishingline.add(hook);
         

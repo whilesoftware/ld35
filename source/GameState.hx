@@ -2,6 +2,7 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
+import flixel.FlxObject;
 import flixel.group.FlxGroup;
 import flixel.system.FlxSound;
 import flixel.math.FlxPoint;
@@ -37,7 +38,7 @@ class GameState extends FlxState {
 	var oars:FlxGroup;
 	var birds:FlxGroup;
 	public var fishingline:FlxGroup;
-	var fish:FlxGroup;
+	var fish:FlxTypedGroup<Fish>;
 	
 	public var boat1:BoatData;
 	var _boat1_front:Boat;
@@ -153,7 +154,7 @@ class GameState extends FlxState {
 		player_line.init();
 		
 		// fish
-		fish = new FlxGroup();
+		fish = new FlxTypedGroup<Fish>();
 		add(fish);
 		
 		// start with 3 fish
@@ -177,7 +178,7 @@ class GameState extends FlxState {
 		
 		// sounds
 		
-		FlxG.camera.follow(camera_target, FlxCameraFollowStyle.LOCKON, 0.05);
+		FlxG.camera.follow(camera_target, FlxCameraFollowStyle.LOCKON, 0.005);
 		FlxG.camera.setScrollBoundsRect(0,0, FlxG.width, FlxG.height * 2);
 		
 	}
@@ -188,6 +189,31 @@ class GameState extends FlxState {
 		oar1.set_reversed(value);
 		_boat1_front.set_reversed(value);
 		_boat1_back.set_reversed(value);
+	}
+	
+	private function hook_a_fish(_fish:FlxObject, _hook:FlxObject):Void {
+		
+		trace("hit a fish");
+		
+		// don't hook unless we're near the center of the fish
+		if (Math.abs(_fish.x - _hook.x) > 20) {
+			return;
+		}
+		
+		var the_fish:Fish = cast(_fish,Fish);
+		
+		the_fish.hook_fish();
+	}
+	
+	public function watch_fish_get_hooked() {
+		FlxG.camera.follow(camera_target, FlxCameraFollowStyle.LOCKON, 0.05);
+		camera_target.y = FlxG.height / 2;
+		
+		new FlxTimer().start(3).onComplete = function(t:FlxTimer):Void {
+			FlxG.camera.follow(camera_target, FlxCameraFollowStyle.LOCKON, 0.005);
+			camera_target.y = FlxG.height * 1.15;
+		}
+		
 	}
 	
 	override public function update(elapsed:Float):Void {
@@ -247,7 +273,7 @@ class GameState extends FlxState {
 						Reg.frame_number + FlxG.random.int(90,180));
 					
 					// set new camera target
-					camera_target.y = FlxG.height;
+					camera_target.y = FlxG.height * 1.15;
 				}
 				
 				// update the boat animation target?
@@ -260,11 +286,43 @@ class GameState extends FlxState {
 						FlxG.random.int(-7,8), 
 						FlxG.random.float(-6,6),
 						Reg.frame_number + FlxG.random.int(90,180));
-				}
+				} 
 				
 
 			case 1:
 				// the game is running
+				 
+				// if the hook is being cranked, check for collisions
+				if (player_line.is_cranking) {
+					// walk the list of fish
+					var hookx:Float = player_line.hook.body.position.x;
+					var hooky:Float = player_line.hook.body.position.y;
+					
+					for (_fish in fish.members) {
+						if (_fish.state != 0) {
+							continue;
+						}
+						
+						if (hookx >= _fish.x && hookx <= _fish.x + 53) {
+							if (hooky >= _fish.y + 18 && hooky <= _fish.y + 52) {
+								_fish.hook_fish();
+								watch_fish_get_hooked();
+							}
+						}
+						
+						/*
+						if (_fish.y < player_line.hook.body.position.y + 20 && 
+						    _fish.y > player_line.hook.body.position.y - 20) {
+								if (_fish.x < player_line.hook.body.position.x + 20 &&
+								    _fish.x > player_line.hook.body.position.x - 20) {
+										trace("we hit a fish!");
+										_fish.hook_fish();
+									}
+							}
+						*/
+					}
+				
+				}
 								
 								/*
 				if (FlxG.keys.anyJustPressed(["1"])) {

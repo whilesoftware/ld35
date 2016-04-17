@@ -194,15 +194,20 @@ class GameState extends FlxState {
 					}
 				}
 				
+				if (FlxG.keys.anyJustPressed(["1"])) {
+					camera_target.y = FlxG.height * 0.5;
+				}
 				if (FlxG.keys.anyJustPressed(["Q"])) {
-					camera_target.y = FlxG.height / 2;
+					camera_target.y = FlxG.height * 0.55;
 				}
 				if (FlxG.keys.anyJustPressed(["W"])) {
-					trace("moving target to bottom of screen");
-					camera_target.y = FlxG.height * 6 / 5;
+					camera_target.y = FlxG.height * 1.15;
 				}
 				if (FlxG.keys.anyJustPressed(["E"])) {
-					camera_target.y = FlxG.height * 4 / 3;
+					camera_target.y = FlxG.height * 1.2;
+				}
+				if (FlxG.keys.anyJustPressed(["R"])) {
+					camera_target.y = FlxG.height * 1.3;
 				}
 				
 

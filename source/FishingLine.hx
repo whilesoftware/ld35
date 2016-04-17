@@ -40,6 +40,8 @@ class FishingLine {
     var hook:FlxNapeSprite;
     var pole:FlxNapeSprite;
     
+    var destroy_timer:FlxTimer;
+    
     private static var nape_started:Bool = false;
     
     var is_active:Bool = false;
@@ -119,6 +121,12 @@ class FishingLine {
     }
     
     public function cast_new_line(xvec:Float, yvec:Float) {
+        
+        // cancel any pending destroy calls
+        if (destroy_timer != null) {
+            destroy_timer.cancel();
+        }
+        
         if (joints != null) {
             for (joint in joints) {
                 joint.space = null;
@@ -206,9 +214,10 @@ class FishingLine {
         is_cranking = true;
         is_active = false;
         
-        hook.body.applyImpulse(new Vec2(0, -800));
+        hook.body.applyImpulse(new Vec2(0, -1000));
         
-        new FlxTimer().start(1.5).onComplete = function(t:FlxTimer):Void {
+        destroy_timer = new FlxTimer();
+        destroy_timer.start(1.5).onComplete = function(t:FlxTimer):Void {
             destroy_line();
         }
     }
@@ -273,7 +282,7 @@ class FishingLine {
                 // apply a small force to slow things down
                 var newforce:Vec2 = new Vec2(0,0);
                 newforce.x = hook.body.velocity.x * -0.1;
-                newforce.y = hook.body.velocity.y * -0.1;
+                newforce.y = hook.body.velocity.y * -0.03;
                 hook.body.applyImpulse(newforce);
             }
         }

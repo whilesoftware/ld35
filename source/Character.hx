@@ -54,7 +54,7 @@ class Character extends FlxSprite {
         
         Reg.gamestate.player_line.precast();
         
-        new FlxTimer().start(0.5).onComplete = function(t:FlxTimer):Void
+        new FlxTimer().start(0.2).onComplete = function(t:FlxTimer):Void
         {
             Reg.gamestate.player_line.cast_new_line(250, -150);
             animation.play("fish_cast_standing", true, false, 0);
@@ -69,7 +69,7 @@ class Character extends FlxSprite {
     public function start_cranking() {
         animation.play("fish_crank_standing", true, false, 0);
         
-        new FlxTimer().start(0.4).onComplete = function(t:FlxTimer):Void
+        new FlxTimer().start(0.2).onComplete = function(t:FlxTimer):Void
         {
             Reg.gamestate.player_line.crank_on_line();
             animation.play("fish_stand", true, false, 0);

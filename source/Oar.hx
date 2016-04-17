@@ -20,6 +20,8 @@ class Oar extends FlxSprite {
         if (boat_id == 1) {
             flipx = true;
         }
+        
+        antialiasing = true;
 
         loadGraphic("assets/images/mock-char.png", true, 128, 64, true);
                 

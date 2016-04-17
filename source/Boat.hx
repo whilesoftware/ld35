@@ -31,7 +31,7 @@ class Boat extends FlxSprite {
             animation.add("a", [0, 1, 2, 3, 4, 5], 3, true, flipx, false);
         }
         
-        
+        antialiasing = true;
         
         
         if (boat_id == 1) {

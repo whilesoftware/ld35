@@ -12,6 +12,9 @@ import flixel.util.FlxTimer;
 import flixel.util.FlxColor;
 import flixel.tweens.FlxEase;
 
+import flixel.FlxCamera.FlxCameraFollowStyle;
+
+
 /**
  * ...
  * @author while(software)
@@ -28,22 +31,32 @@ class GameState extends FlxState {
 	var arrows:FlxGroup;
 	var oars:FlxGroup;
 	var birds:FlxGroup;
-	var fishingline:FlxGroup;
+	public var fishingline:FlxGroup;
 	var fish:FlxGroup;
 	
-	var boat1:BoatData;
-	var boat2:BoatData;
+	public var boat1:BoatData;
+	public var boat2:BoatData;
 	
-	var char1:Character;
-	var char2:Character;
+	public var char1:Character;
+	public var char2:Character;
 	
 	var oar1:Oar;
 	var oar2:Oar;
+	
+	public var player_line:FishingLine;
+	
+	public var camera_target:FlxSprite;
 	
 	
 	override public function create():Void {
 		
 		Reg.gamestate = this;
+		
+		camera_target = new FlxSprite();
+		camera_target.makeGraphic(1, 1, 0x0);
+		add(camera_target);
+		camera_target.x = FlxG.width / 2;
+		camera_target.y = FlxG.height / 2;
 		
 		// clouds
 		clouds = new FlxGroup();
@@ -130,6 +143,9 @@ class GameState extends FlxState {
 		fishingline = new FlxGroup();
 		add(fishingline);
 		
+		player_line = new FishingLine();
+		player_line.init();
+		
 		// fish
 		fish = new FlxGroup();
 		add(fish);
@@ -140,28 +156,55 @@ class GameState extends FlxState {
 		
 		// sounds
 		
+		FlxG.camera.follow(camera_target, FlxCameraFollowStyle.LOCKON, 0.5);
+		FlxG.camera.setScrollBoundsRect(0,0, FlxG.width, FlxG.height * 2);
+		
 		state = 0;
 	}
 	
 	override public function update(elapsed:Float):Void {
 		
+		
+		
 		FlxG.camera.bgColor = 0xff212121;
 		
+		
 		Reg.update(elapsed);
+		player_line.update();
 		
 		switch(state) {
 			case 0:
 				// we're waiting for the game to start
 				
 				if (FlxG.keys.anyJustPressed(["SPACE"])) {
-					oar2.start_rowing();
-					char2.start_rowing();
+					oar1.start_rowing();
+					char1.start_rowing();
 				}
 				
 				if (FlxG.keys.anyJustReleased(["SPACE"])) {
-					oar2.stop_rowing();
-					char2.stop_rowing();
+					oar1.stop_rowing();
+					char1.stop_rowing();
 				}
+				
+				if (FlxG.keys.anyJustPressed(["C"])) {
+					if (char1.is_fishing) {
+						char1.start_cranking();
+					}else{
+						char1.start_casting();
+					}
+				}
+				
+				if (FlxG.keys.anyJustPressed(["Q"])) {
+					camera_target.y = FlxG.height / 2;
+				}
+				if (FlxG.keys.anyJustPressed(["W"])) {
+					trace("moving target to bottom of screen");
+					camera_target.y = FlxG.height * 6 / 5;
+				}
+				if (FlxG.keys.anyJustPressed(["E"])) {
+					camera_target.y = FlxG.height * 4 / 3;
+				}
+				
 
 			case 1:
 				// the game is running
@@ -208,8 +251,8 @@ class GameState extends FlxState {
 		char2.set(boat2);
 		
 		
-		super.update(elapsed);
 		
+		super.update(elapsed);
 		
 
 	}

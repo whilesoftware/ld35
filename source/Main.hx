@@ -74,8 +74,8 @@ class Main extends Sprite
 #if flash
 		// no crashdumper. flash is the worst
 #else		
-		var unique_id:String = SessionData.generateID("ld35_");
-		var crashDumper = new CrashDumper(unique_id);
+		//var unique_id:String = SessionData.generateID("ld35_");
+		//var crashDumper = new CrashDumper(unique_id);
 #end
 		
 		

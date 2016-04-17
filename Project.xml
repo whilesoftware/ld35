@@ -12,6 +12,8 @@
 	<set name="SWF_VERSION" value="11.8" />
 
 	<haxelib name="hxcpp-debugger"/>
+	<haxelib name="nape"/>
+	<haxelib name="flixel-addons"/>
 	<haxedef name="HXCPP_DEBUGGER" if="debug" />
 
 	<haxelib name="crashdumper"/>
